@@ -7,6 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1Fk_rsvdTLzKMmz1caY7Bd9S4eCejR7C4
 """
 
+# This application shows 3 different types of regression lines to predict stock prices using Python, then print out the prediction for the best performing one.
+
+# This will be using the Ridge Model, Linear Regression Model, and the Gradient Boosting Regressor model where the test results will be plotted and compared. 
+
 #matrix math & data pre-processing
 import numpy as np
 
