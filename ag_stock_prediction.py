@@ -148,3 +148,19 @@ df_gbr.drop(['Open', 'High', 'Low', 'Close', 'Volume'], axis=1, inplace=True)
 df_gbr = df_gbr.iloc[index_train+window_size:]
 df_gbr['Adj Close Test'] = y_pred_gbr_test
 df_gbr.plot(label = 'AG', figsize=(16,8), title='Adjusted Closing Price', grid=True)
+
+# Plot all 3 testing data for each prediction model and compare them with the actual price
+
+df_all = df_full.copy()
+df_all.drop(['Open', 'High', 'Low', 'Close', 'Volume'], axis=1, inplace=True)
+df_all = df_all.iloc[index_train+window_size:]
+df_all['Adj Close GBR'] = y_pred_gbr_test
+df_all['Adj Close LinReg'] = y_pred_linreg_test
+df_all['Adj Close Ridge'] = y_pred_ridge_test
+df_all.plot(label = 'AG', figsize=(12,8), title='Adj Closing Price Testing Data - 3 Models', grid=True)
+
+# It looks like the Ridge model worked the best between Linear Regression and Gradient Boosting Regressor model
+
+#Print the Ride test data results
+print(y_pred_ridge_test)
+
